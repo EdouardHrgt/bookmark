@@ -158,12 +158,6 @@ h3 {
 section {
   background-repeat: no-repeat;
 }
-
-.error {
-  background-color: var(--clr-red);
-  color: var(--clr-white);
-}
-
 /* --- HEADER --- */
 header {
   justify-content: space-between;
@@ -188,6 +182,24 @@ header {
   display: none;
   cursor: pointer;
   margin-right: 2rem;
+}
+footer {
+  background-color: var(--clr-blue);
+}
+.punchline {
+  font-size: var(--nav-size);
+  letter-spacing: var(--nav-space);
+  text-transform: uppercase;
+  color: var(--clr-white);
+  text-align: center;
+  padding-top: 3rem;
+}
+footer h2 {
+  color: var(--clr-white);
+  font-weight: normal;
+  max-width: 408px;
+  text-align: center;
+  margin: 2rem auto;
 }
 
 @media screen and (max-width: 638px) {
@@ -263,16 +275,7 @@ main {
 /* --- SECTION 3: Bookmarks --- */
 .bookmarks {
   border: 3px solid lightseagreen;
-}
-.bookmarks-list {
-  justify-content: center;
-  margin: 3rem auto 5rem auto;
-}
-.bookmark {
-  justify-content: center;
-  gap: 6rem;
-}
-.bookmark-img {
+  min-height: 600px;
   position: relative;
 }
 .bookmark-bg-blue {
@@ -284,6 +287,19 @@ main {
   bottom: -4rem;
   left: -34rem;
   z-index: -1;
+}
+.bookmarks-list {
+  justify-content: center;
+  margin: 3rem auto 5rem auto;
+}
+.bookmark {
+  justify-content: center;
+  gap: 6rem;
+}
+.bookmark-img {
+  position: relative;
+  width: 34rem;
+  height: 26rem;
 }
 .bookmark-txt {
   max-width: 445px;
@@ -387,6 +403,9 @@ main {
 /* --- SECTION 6: Footer --- */
 .footer-links {
   background-color: var(--clr-black);
+  padding: 2rem 10rem;
+}
+.footer-links > div {
   gap: 3rem;
 }
 .footer-list {
@@ -400,7 +419,7 @@ main {
   line-height: var(--nav-space);
 }
 .footer-socials {
-  gap: 1rem;
+  gap: 2rem;
   margin-left: auto;
 }
 .footer-socials svg {
@@ -410,6 +429,51 @@ main {
 }
 .footer-socials svg:hover {
   fill: var(--clr-red);
+}
+footer form {
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  padding: 0 0.2rem 1.5rem;
+  position: relative;
+}
+.error {
+  color: var(--clr-white);
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0.3rem;
+  display: none;
+}
+.activeMsg {
+  display: block;
+}
+.activeError {
+  background-color: var(--clr-red);
+  border-radius: 7px 7px 0 0;
+}
+footer form input[type='email'] {
+  display: block;
+  width: 350px;
+  padding: 0.9rem 1rem;
+  border-radius: 7px;
+  border: none;
+  height: 48px;
+  margin-top: 0.1rem;
+}
+.sub {
+  display: block;
+  border: none;
+  background: transparent;
+  background-color: var(--clr-red);
+  width: 126px;
+  height: 48px;
+  border-radius: 7px;
+  cursor: pointer;
+  position: relative;
+  top: -0.7rem;
 }
 
 @media screen and (max-width: 1300px) {

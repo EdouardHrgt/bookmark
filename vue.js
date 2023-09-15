@@ -21,10 +21,23 @@ const app = createApp({
     ]);
 
     let idx = ref(0);
-
+    let isError = ref(false);
+    let emailMsg = ref('');
+    const checkEmail = (e) => {
+      e.preventDefault();
+      if (emailMsg.value.length <= 10) {
+        isError.value = true;
+      } else {
+        isError.value = false;
+        alert('Your message has been sent!');
+      }
+    };
     return {
       bookmarks,
       idx,
+      isError,
+      emailMsg,
+      checkEmail,
     };
   },
 });
