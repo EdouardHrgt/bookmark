@@ -43,6 +43,7 @@ const app = createApp({
       },
     ]);
 
+    let menu = ref(false);
     let idx = ref(0);
     let isError = ref(false);
     let emailMsg = ref('');
@@ -72,6 +73,7 @@ const app = createApp({
       isOpen,
       emailMsg,
       faqs,
+      menu,
       checkEmail,
       handleFaq,
     };

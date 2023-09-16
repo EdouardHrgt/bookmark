@@ -5,6 +5,7 @@
   --clr-black: #242a45;
   --clr-gray: #9194a2;
   --clr-white: #ffff;
+  --clr-trans-blue: rgba(36, 42, 69, 0.99);
 
   /* TYPO */
   --h1-size: 48px;
@@ -19,7 +20,6 @@
   --h2-space: -0.1px;
   --h2-size-m: 24px;
   --h2-space-m: -0.08px;
-
   --h3-size: 20px;
   --h3-space: 0.25px;
 
@@ -127,6 +127,11 @@ h4 {
   transition: 0.3s ease-in;
 }
 
+.logo-mobile {
+  position: absolute;
+  z-index: 11;
+}
+
 .legend-p {
   font-size: var(--legend-size);
   line-height: var(--legend-line);
@@ -162,7 +167,6 @@ h4 {
 .btn:hover .btn-p {
   color: var(--clr-blue);
 }
-
 section {
   background-repeat: no-repeat;
 }
@@ -190,6 +194,8 @@ header {
   display: none;
   cursor: pointer;
   margin-right: 2rem;
+  position: relative;
+  z-index: 15;
 }
 footer {
   background-color: var(--clr-blue);
@@ -218,26 +224,57 @@ footer h2 {
     width: 100%;
     justify-content: space-between;
   }
-  .active {
+  .open-menu,
+  .close-menu {
     display: block;
-    background-color: lightcoral;
   }
   .navbar {
-    background-color: lightgreen;
+    background-color: var(--clr-trans-blue);
     position: absolute;
-    top: 2rem;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    min-height: calc(100dvh - 2rem);
+    top: 0;
+    left: -10%;
+    right: -10%;
+    min-height: 100dvh;
+    z-index: 10;
     display: none;
+  }
+  .navActive {
+    display: block;
   }
   .nav-list {
     flex-direction: column;
     gap: 3rem;
+    margin-top: 7rem;
+    width: 100%;
+  }
+  .nav-list li {
+    width: inherit;
+  }
+  .nav-a {
+    color: var(--clr-white);
+    font-size: var(--p1-size);
+    border: 1px solid var(--clr-gray);
+    width: 85%;
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    margin: auto;
+  }
+  .nav-btn {
+    background: transparent;
+    border: 2px solid var(--clr-white);
+    box-shadow: none;
+    display: block;
+    display: block;
+    width: 85%;
+    margin: auto;
+    border-radius: 0;
+  }
+  .nav-btn-p {
+    color: var(--clr-white);
+    border: none;
   }
 }
-
 main {
   overflow: hidden;
 }
