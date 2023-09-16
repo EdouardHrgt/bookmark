@@ -50,7 +50,7 @@
 
 @media screen and (max-width: 1440px) {
   :root {
-    --max-width: 85%;
+    --max-width: 95%;
   }
 }
 
@@ -108,6 +108,13 @@ h3 {
   letter-spacing: var(--h3-space);
 }
 
+h4 {
+  font-size: 18px;
+  line-height: 32px;
+  color: #242a45;
+  font-weight: normal;
+}
+
 .p-1 {
   font-size: var(--p1-size);
   line-height: var(--p1-line);
@@ -139,7 +146,8 @@ h3 {
 
 .btn {
   border-radius: 1rem;
-  border: 2px solid var(--clr-black);
+  outline: 2px solid var(--clr-black);
+  border: none;
   cursor: pointer;
   display: block;
   width: fit-content;
@@ -149,7 +157,7 @@ h3 {
 }
 .btn:hover {
   background-color: var(--clr-white);
-  border: 2px solid var(--clr-blue);
+  outline: 2px solid var(--clr-blue);
 }
 .btn:hover .btn-p {
   color: var(--clr-blue);
@@ -202,9 +210,9 @@ footer h2 {
   margin: 2rem auto;
 }
 
-@media screen and (max-width: 638px) {
+@media screen and (max-width: 768px) {
   :root {
-    --max-width: 100%;
+    --max-width: 90%;
   }
   .logo-menu {
     width: 100%;
@@ -274,7 +282,6 @@ main {
 
 /* --- SECTION 3: Bookmarks --- */
 .bookmarks {
-  border: 3px solid lightseagreen;
   min-height: 600px;
   position: relative;
 }
@@ -399,7 +406,75 @@ main {
 }
 
 /* --- SECTION 5: FAQ --- */
+.faq {
+  margin-bottom: 5rem;
+  min-height: 600px;
+  position: relative;
+}
+.faq-main {
+  max-width: 540px;
+  text-align: center;
+  margin: auto;
+  border-bottom: 1px solid #b0b0b0;
+  padding-bottom: 2rem;
+}
+.faq-main h2 {
+  margin-bottom: 1rem;
+}
+.faq-block {
+  width: 540px;
+  border-bottom: 1px solid #b0b0b0;
+  margin: auto;
+  padding: 1rem 0;
+}
+.faq-title {
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.faq-title svg {
+  stroke: #5267df;
+  transition: 0.3s;
+}
+.color {
+  color: var(--clr-red);
+}
+.colorSvg {
+  stroke: var(--clr-red);
+}
+.rotateImg {
+  animation: rotation 0.3s forwards;
+}
 
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+.faq-title:hover {
+  color: var(--clr-red);
+}
+.more {
+  display: block;
+  width: 114px;
+  height: 40px;
+  background-color: var(--clr-blue);
+  color: var(--clr-white);
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
 /* --- SECTION 6: Footer --- */
 .footer-links {
   background-color: var(--clr-black);
@@ -452,7 +527,7 @@ footer form {
 }
 .activeError {
   background-color: var(--clr-red);
-  border-radius: 7px 7px 0 0;
+  border-radius: 7px;
 }
 footer form input[type='email'] {
   display: block;
@@ -474,6 +549,9 @@ footer form input[type='email'] {
   cursor: pointer;
   position: relative;
   top: -0.7rem;
+  color: var(--clr-white);
+  font-weight: bold;
+  letter-spacing: 0.9px;
 }
 
 @media screen and (max-width: 1300px) {
@@ -489,10 +567,15 @@ footer form input[type='email'] {
     right: -40rem;
   }
   .bookmark-bg-blue {
-    height: 100%;
+    height: 300px;
     width: 900px;
+    bottom: -3rem;
+  }
+  .bookmark {
+    gap: 2rem;
   }
 }
+
 @media screen and (max-width: 1100px) {
   .bookmark-bg-blue {
     width: 800px;
@@ -538,7 +621,39 @@ footer form input[type='email'] {
   .manager-txt {
     margin-top: 4rem;
   }
+  .footer-links {
+    padding: 2rem 5rem;
+  }
 }
+
+@media screen and (max-width: 851px) {
+  .bookmark {
+    flex-direction: column-reverse;
+  }
+  .bookmarks-list {
+    margin: 3rem auto;
+  }
+  .bookmark-img {
+    position: relative;
+    width: 100%;
+    height: 26rem;
+  }
+  .bookmark-img img {
+    margin: auto;
+  }
+  .bookmark-bg-blue {
+    height: 250px;
+    width: 1000px;
+    bottom: 0rem;
+  }
+  .extension {
+    margin-top: 4rem;
+  }
+  .footer-links {
+    padding: 2rem 3rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .manager {
     flex-direction: column-reverse;
@@ -570,5 +685,42 @@ footer form input[type='email'] {
   }
   .card {
     align-self: center;
+  }
+  .faq {
+    margin-bottom: 2rem;
+    min-height: auto;
+  }
+  .faq-main {
+    max-width: none;
+    width: 100%;
+  }
+  .faq-block {
+    width: 100%;
+  }
+  .more {
+    margin: 2rem auto 0;
+    position: unset;
+    transform: translateX(0);
+  }
+  footer form {
+    flex-direction: column;
+  }
+  .sub {
+    top: 0;
+  }
+  .sub,
+  footer form input[type='email'] {
+    width: 300px;
+  }
+
+  .footer-links {
+    padding: 2rem 0;
+  }
+  .footer-links > div {
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .footer-socials {
+    margin: auto;
   }
 }
